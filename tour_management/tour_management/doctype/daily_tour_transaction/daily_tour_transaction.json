@@ -1,0 +1,374 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2023-04-05 17:04:33.524727",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "tour_information_tab",
+  "naming_series",
+  "sale_invoice",
+  "posting_date",
+  "edit_posting_date",
+  "arrival_date",
+  "dispatcher_date",
+  "total_days",
+  "amended_from",
+  "column_break_9",
+  "price_list",
+  "tour_destination",
+  "tour_destination_name",
+  "voucher",
+  "classification",
+  "section_break_23",
+  "qty",
+  "rate",
+  "column_break_26",
+  "total_amount",
+  "net_sale",
+  "total_net_sale",
+  "company_income_section",
+  "agency",
+  "agency_name",
+  "agency_share",
+  "total_agency_share",
+  "column_break_23",
+  "income_qty",
+  "income_price",
+  "income_amount",
+  "sales_commisson_section",
+  "income_commission_qty",
+  "income_commission_price",
+  "column_break_29",
+  "income_commission_amount",
+  "income_payment_status",
+  "expense",
+  "guide_expense_section",
+  "guide_expenses",
+  "driver_expense_section",
+  "driver_expense",
+  "commissions_tab",
+  "guide_commission_section",
+  "guide_commissions",
+  "driver_commission_section",
+  "driver_commissions",
+  "price_list_rate",
+  "base_price_list_rate"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series"
+  },
+  {
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Posting Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Daily Tour Transaction",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "voucher",
+   "fieldtype": "Data",
+   "label": "Voucher"
+  },
+  {
+   "fieldname": "tour_information_tab",
+   "fieldtype": "Tab Break",
+   "label": "Tour Information"
+  },
+  {
+   "fieldname": "expense",
+   "fieldtype": "Tab Break",
+   "label": "Expense"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "guide_expense_section",
+   "fieldtype": "Section Break",
+   "label": "Guide Expense"
+  },
+  {
+   "fieldname": "guide_expenses",
+   "fieldtype": "Table",
+   "label": "Guide Expenses",
+   "options": "Guide Expense"
+  },
+  {
+   "fieldname": "driver_expense_section",
+   "fieldtype": "Section Break",
+   "label": "Driver Expense"
+  },
+  {
+   "fieldname": "driver_expense",
+   "fieldtype": "Table",
+   "label": "Driver Expense",
+   "options": "Driver Expense"
+  },
+  {
+   "fieldname": "commissions_tab",
+   "fieldtype": "Tab Break",
+   "label": "Commissions"
+  },
+  {
+   "fieldname": "guide_commission_section",
+   "fieldtype": "Section Break",
+   "label": "Guide Commission"
+  },
+  {
+   "fieldname": "guide_commissions",
+   "fieldtype": "Table",
+   "label": "Guide Commissions",
+   "options": "Guide Commission"
+  },
+  {
+   "fieldname": "driver_commission_section",
+   "fieldtype": "Section Break",
+   "label": "Driver Commission"
+  },
+  {
+   "fieldname": "driver_commissions",
+   "fieldtype": "Table",
+   "label": "Driver Commissions",
+   "options": "Driver Commission"
+  },
+  {
+   "fieldname": "agency",
+   "fieldtype": "Link",
+   "label": "Agency",
+   "options": "Customer"
+  },
+  {
+   "depends_on": "eval:doc.agency",
+   "fieldname": "classification",
+   "fieldtype": "Data",
+   "label": "Classification",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "agency.customer_name",
+   "fetch_if_empty": 1,
+   "fieldname": "agency_name",
+   "fieldtype": "Data",
+   "label": "Agency Name"
+  },
+  {
+   "default": "Standard Selling",
+   "fieldname": "price_list",
+   "fieldtype": "Link",
+   "label": "Price List",
+   "options": "Price List"
+  },
+  {
+   "fieldname": "column_break_9",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_23",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_26",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "total_amount",
+   "fieldtype": "Currency",
+   "label": "Total Amount"
+  },
+  {
+   "fieldname": "total_net_sale",
+   "fieldtype": "Currency",
+   "label": "Total Net Sale"
+  },
+  {
+   "fieldname": "tour_destination",
+   "fieldtype": "Link",
+   "label": "Tour Destination",
+   "options": "Item",
+   "reqd": 1
+  },
+  {
+   "fieldname": "rate",
+   "fieldtype": "Currency",
+   "label": "Rate"
+  },
+  {
+   "fieldname": "price_list_rate",
+   "fieldtype": "Currency",
+   "hidden": 1,
+   "label": "Price List Rate"
+  },
+  {
+   "fieldname": "base_price_list_rate",
+   "fieldtype": "Currency",
+   "hidden": 1,
+   "label": "Base Price List Rate"
+  },
+  {
+   "fetch_from": "tour_destination.item_name",
+   "fetch_if_empty": 1,
+   "fieldname": "tour_destination_name",
+   "fieldtype": "Data",
+   "label": "Tour Destination Name"
+  },
+  {
+   "default": "1",
+   "fieldname": "qty",
+   "fieldtype": "Int",
+   "label": "QTY"
+  },
+  {
+   "fetch_from": "tour_destination.net_sale_price",
+   "fetch_if_empty": 1,
+   "fieldname": "net_sale",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Net Sale"
+  },
+  {
+   "fieldname": "company_income_section",
+   "fieldtype": "Section Break",
+   "label": "Company Income "
+  },
+  {
+   "default": "0",
+   "fieldname": "income_price",
+   "fieldtype": "Currency",
+   "label": "Income Price"
+  },
+  {
+   "default": "1",
+   "fieldname": "income_qty",
+   "fieldtype": "Int",
+   "label": "Income Qty",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_23",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sale_invoice",
+   "fieldtype": "Link",
+   "label": "Sale Invoice",
+   "options": "Sales Invoice",
+   "reqd": 1
+  },
+  {
+   "fieldname": "sales_commisson_section",
+   "fieldtype": "Section Break",
+   "label": "Sales Commisson"
+  },
+  {
+   "default": "1",
+   "fieldname": "income_commission_qty",
+   "fieldtype": "Int",
+   "label": "QTY"
+  },
+  {
+   "default": "0",
+   "fieldname": "income_commission_price",
+   "fieldtype": "Currency",
+   "label": "Income Price"
+  },
+  {
+   "default": "0",
+   "fieldname": "income_commission_amount",
+   "fieldtype": "Currency",
+   "label": "Income Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "income_payment_status",
+   "fieldtype": "Read Only",
+   "label": "Payment Status"
+  },
+  {
+   "default": "0",
+   "fieldname": "income_amount",
+   "fieldtype": "Currency",
+   "label": "Income Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_29",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "arrival_date",
+   "fieldtype": "Date",
+   "label": "Arrival Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "dispatcher_date",
+   "fieldtype": "Date",
+   "label": "Dispatcher Date",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "total_days",
+   "fieldtype": "Int",
+   "label": "Total Days"
+  },
+  {
+   "default": "0",
+   "fieldname": "edit_posting_date",
+   "fieldtype": "Check",
+   "label": "Edit Posting Date"
+  },
+  {
+   "fieldname": "agency_share",
+   "fieldtype": "Percent",
+   "label": "Share to Agency (%)"
+  },
+  {
+   "default": "0",
+   "fieldname": "total_agency_share",
+   "fieldtype": "Currency",
+   "label": "Total Agency Share",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2023-04-25 15:50:48.111598",
+ "modified_by": "Administrator",
+ "module": "Tour Management",
+ "name": "Daily Tour Transaction",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

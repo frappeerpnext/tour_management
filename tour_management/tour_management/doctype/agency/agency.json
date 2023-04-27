@@ -1,0 +1,142 @@
+{
+ "actions": [],
+ "autoname": "naming_series:[agency_code]",
+ "creation": "2023-04-01 09:08:55.303762",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "column_break_6",
+  "naming_series",
+  "agency_name",
+  "category",
+  "contact_section",
+  "phone_1",
+  "phone_2",
+  "column_break_8",
+  "address_line_1",
+  "address_line_2",
+  "total_receivable",
+  "total_paid",
+  "total_remaining_balance",
+  "vouchers_section"
+ ],
+ "fields": [
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "AC-.YYYY.-"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "agency_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Agency Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "category",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Category",
+   "options": "Agency\nPersonal",
+   "reqd": 1
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "phone_1",
+   "fieldtype": "Data",
+   "label": "Phone 1"
+  },
+  {
+   "fieldname": "phone_2",
+   "fieldtype": "Data",
+   "label": "Phone 2"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "address_line_1",
+   "fieldtype": "Data",
+   "label": "Address Line 1"
+  },
+  {
+   "fieldname": "address_line_2",
+   "fieldtype": "Data",
+   "label": "Address Line 2"
+  },
+  {
+   "fieldname": "total_receivable",
+   "fieldtype": "Currency",
+   "label": "Total Receivable",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_paid",
+   "fieldtype": "Currency",
+   "label": "Total Paid",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_remaining_balance",
+   "fieldtype": "Currency",
+   "label": "Total Remaining Balance",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_6",
+   "fieldtype": "Section Break",
+   "label": "Information"
+  },
+  {
+   "fieldname": "contact_section",
+   "fieldtype": "Section Break",
+   "label": "Contact"
+  },
+  {
+   "fieldname": "column_break_8",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "vouchers_section",
+   "fieldtype": "Section Break",
+   "label": "Vouchers"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [
+  {
+   "group": "Voucher",
+   "link_doctype": "Agency Voucher Code",
+   "link_fieldname": "agency"
+  }
+ ],
+ "modified": "2023-04-04 14:22:46.099686",
+ "modified_by": "Administrator",
+ "module": "Tour Management",
+ "name": "Agency",
+ "name_case": "Title Case",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

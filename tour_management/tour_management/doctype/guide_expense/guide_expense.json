@@ -1,0 +1,71 @@
+{
+ "actions": [],
+ "autoname": "hash",
+ "creation": "2023-04-05 16:11:21.683561",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "guide",
+  "guide_name",
+  "expense_date",
+  "expense_type",
+  "expense_fee",
+  "note"
+ ],
+ "fields": [
+  {
+   "fieldname": "expense_date",
+   "fieldtype": "Date",
+   "label": "Expense Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "expense_type",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Expense Type",
+   "options": "Expense Type",
+   "reqd": 1
+  },
+  {
+   "fieldname": "expense_fee",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Expense Fee",
+   "reqd": 1
+  },
+  {
+   "fieldname": "note",
+   "fieldtype": "Data",
+   "label": "Note"
+  },
+  {
+   "fieldname": "guide",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Guide",
+   "options": "Tour Guide",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "driver.full_name",
+   "fieldname": "guide_name",
+   "fieldtype": "Data",
+   "label": "Guide Name"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-04-05 16:39:04.287669",
+ "modified_by": "Administrator",
+ "module": "Tour Management",
+ "name": "Guide Expense",
+ "naming_rule": "Random",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
