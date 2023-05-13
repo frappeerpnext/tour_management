@@ -12,6 +12,8 @@
   "sale_invoice",
   "posting_date",
   "edit_posting_date",
+  "agency",
+  "agency_name",
   "arrival_date",
   "dispatcher_date",
   "total_days",
@@ -25,25 +27,34 @@
   "section_break_23",
   "qty",
   "rate",
-  "column_break_26",
   "total_amount",
+  "column_break_67",
+  "note",
   "net_sale",
   "total_net_sale",
   "company_income_section",
-  "agency",
-  "agency_name",
-  "agency_share",
-  "total_agency_share",
-  "column_break_23",
-  "income_qty",
-  "income_price",
-  "income_amount",
-  "sales_commisson_section",
-  "income_commission_qty",
-  "income_commission_price",
-  "column_break_29",
-  "income_commission_amount",
-  "income_payment_status",
+  "company_qty",
+  "company_rate",
+  "company_total_amount",
+  "column_break_26",
+  "company_note",
+  "sale_commission_to_be_paid_monthly_section",
+  "sale_commission_qty",
+  "sale_commission_rate",
+  "sale_commission_total_amount",
+  "column_break_36",
+  "sale_commission_note",
+  "total_commission_income_section",
+  "total_commission_qty",
+  "total_commission_rate",
+  "total_commission_total_amount",
+  "column_break_59",
+  "total_commission_note",
+  "share_to_company_income_section",
+  "share_to_company_income_name",
+  "share_to_company_income_total_amount",
+  "data_60",
+  "share_to_company_income_share",
   "expense",
   "guide_expense_section",
   "guide_expenses",
@@ -168,6 +179,7 @@
    "default": "Standard Selling",
    "fieldname": "price_list",
    "fieldtype": "Link",
+   "hidden": 1,
    "label": "Price List",
    "options": "Price List"
   },
@@ -177,7 +189,8 @@
   },
   {
    "fieldname": "section_break_23",
-   "fieldtype": "Section Break"
+   "fieldtype": "Section Break",
+   "label": "Original Full Price"
   },
   {
    "fieldname": "column_break_26",
@@ -192,6 +205,7 @@
   {
    "fieldname": "total_net_sale",
    "fieldtype": "Currency",
+   "hidden": 1,
    "label": "Total Net Sale"
   },
   {
@@ -204,7 +218,7 @@
   {
    "fieldname": "rate",
    "fieldtype": "Currency",
-   "label": "Rate"
+   "label": "Price"
   },
   {
    "fieldname": "price_list_rate",
@@ -226,7 +240,6 @@
    "label": "Tour Destination Name"
   },
   {
-   "default": "1",
    "fieldname": "qty",
    "fieldtype": "Int",
    "label": "QTY"
@@ -245,68 +258,11 @@
    "label": "Company Income "
   },
   {
-   "default": "0",
-   "fieldname": "income_price",
-   "fieldtype": "Currency",
-   "label": "Income Price"
-  },
-  {
-   "default": "1",
-   "fieldname": "income_qty",
-   "fieldtype": "Int",
-   "label": "Income Qty",
-   "read_only": 1
-  },
-  {
-   "fieldname": "column_break_23",
-   "fieldtype": "Column Break"
-  },
-  {
    "fieldname": "sale_invoice",
    "fieldtype": "Link",
    "label": "Sale Invoice",
    "options": "Sales Invoice",
-   "reqd": 1
-  },
-  {
-   "fieldname": "sales_commisson_section",
-   "fieldtype": "Section Break",
-   "label": "Sales Commisson"
-  },
-  {
-   "default": "1",
-   "fieldname": "income_commission_qty",
-   "fieldtype": "Int",
-   "label": "QTY"
-  },
-  {
-   "default": "0",
-   "fieldname": "income_commission_price",
-   "fieldtype": "Currency",
-   "label": "Income Price"
-  },
-  {
-   "default": "0",
-   "fieldname": "income_commission_amount",
-   "fieldtype": "Currency",
-   "label": "Income Amount",
    "read_only": 1
-  },
-  {
-   "fieldname": "income_payment_status",
-   "fieldtype": "Read Only",
-   "label": "Payment Status"
-  },
-  {
-   "default": "0",
-   "fieldname": "income_amount",
-   "fieldtype": "Currency",
-   "label": "Income Amount",
-   "read_only": 1
-  },
-  {
-   "fieldname": "column_break_29",
-   "fieldtype": "Column Break"
   },
   {
    "fieldname": "arrival_date",
@@ -333,22 +289,125 @@
    "label": "Edit Posting Date"
   },
   {
-   "fieldname": "agency_share",
-   "fieldtype": "Percent",
-   "label": "Share to Agency (%)"
+   "fieldname": "company_qty",
+   "fieldtype": "Int",
+   "label": "Qty"
   },
   {
-   "default": "0",
-   "fieldname": "total_agency_share",
+   "fieldname": "company_rate",
    "fieldtype": "Currency",
-   "label": "Total Agency Share",
-   "read_only": 1
+   "label": "Price"
+  },
+  {
+   "fieldname": "company_note",
+   "fieldtype": "Text",
+   "label": "Note",
+   "max_height": "180px"
+  },
+  {
+   "fieldname": "sale_commission_to_be_paid_monthly_section",
+   "fieldtype": "Section Break",
+   "label": "Sale Commission To Be Paid Monthly"
+  },
+  {
+   "fieldname": "sale_commission_qty",
+   "fieldtype": "Int",
+   "label": "Qty"
+  },
+  {
+   "fieldname": "sale_commission_rate",
+   "fieldtype": "Currency",
+   "label": "Price"
+  },
+  {
+   "fieldname": "sale_commission_total_amount",
+   "fieldtype": "Currency",
+   "label": "Total Amount"
+  },
+  {
+   "fieldname": "total_commission_income_section",
+   "fieldtype": "Section Break",
+   "label": "Total Commission Income"
+  },
+  {
+   "fieldname": "total_commission_qty",
+   "fieldtype": "Int",
+   "label": "Qty"
+  },
+  {
+   "fieldname": "total_commission_rate",
+   "fieldtype": "Currency",
+   "label": "Price"
+  },
+  {
+   "fieldname": "total_commission_total_amount",
+   "fieldtype": "Currency",
+   "label": "Total Amount"
+  },
+  {
+   "fieldname": "share_to_company_income_section",
+   "fieldtype": "Section Break",
+   "label": "Share To Company Income"
+  },
+  {
+   "fieldname": "share_to_company_income_name",
+   "fieldtype": "Data",
+   "label": "Name"
+  },
+  {
+   "fieldname": "share_to_company_income_share",
+   "fieldtype": "Data",
+   "label": "Share"
+  },
+  {
+   "fieldname": "share_to_company_income_total_amount",
+   "fieldtype": "Currency",
+   "label": "Total Amount"
+  },
+  {
+   "fieldname": "note",
+   "fieldtype": "Text",
+   "label": "Note",
+   "max_height": "180px"
+  },
+  {
+   "fieldname": "column_break_67",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_36",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sale_commission_note",
+   "fieldtype": "Text",
+   "label": "Note",
+   "max_height": "180px"
+  },
+  {
+   "fieldname": "total_commission_note",
+   "fieldtype": "Text",
+   "label": "Note",
+   "max_height": "180px"
+  },
+  {
+   "fieldname": "column_break_59",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "data_60",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "company_total_amount",
+   "fieldtype": "Currency",
+   "label": "Total Amount"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-04-25 15:50:48.111598",
+ "modified": "2023-05-08 14:41:07.268353",
  "modified_by": "Administrator",
  "module": "Tour Management",
  "name": "Daily Tour Transaction",

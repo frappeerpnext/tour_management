@@ -8,6 +8,7 @@
  "engine": "InnoDB",
  "field_order": [
   "full_name",
+  "type",
   "phone_1",
   "phone_2",
   "address_line_1",
@@ -51,25 +52,34 @@
   {
    "fieldname": "total_payable",
    "fieldtype": "Currency",
-   "label": "Total Payable"
+   "label": "Total Payable",
+   "read_only": 1
   },
   {
    "fieldname": "total_paid",
    "fieldtype": "Currency",
-   "label": "Total Paid"
+   "label": "Total Paid",
+   "read_only": 1
   },
   {
    "fieldname": "total_remaining_balance",
    "fieldtype": "Currency",
-   "label": "Total Remaining Balance"
+   "label": "Total Remaining Balance",
+   "read_only": 1
+  },
+  {
+   "fieldname": "type",
+   "fieldtype": "Select",
+   "label": "Type",
+   "options": "Driver\nGuide"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-04-01 10:57:37.974582",
+ "modified": "2023-05-05 11:33:12.356998",
  "modified_by": "Administrator",
  "module": "Tour Management",
- "name": "Tour Driver",
+ "name": "Tour Guide And Driver",
  "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
