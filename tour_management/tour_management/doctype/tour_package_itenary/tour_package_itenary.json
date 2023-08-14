@@ -1,0 +1,64 @@
+{
+ "actions": [],
+ "autoname": "hash",
+ "creation": "2023-07-18 17:17:33.174226",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "itinerary_day",
+  "title",
+  "note",
+  "itemnary_detail",
+  "meal_plan",
+  "meal_plan_note"
+ ],
+ "fields": [
+  {
+   "fieldname": "itinerary_day",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Itinerary Day"
+  },
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Title"
+  },
+  {
+   "fieldname": "note",
+   "fieldtype": "Small Text",
+   "in_list_view": 1,
+   "label": "Note"
+  },
+  {
+   "fieldname": "itemnary_detail",
+   "fieldtype": "Text Editor",
+   "label": "Itinerary Detail"
+  },
+  {
+   "fieldname": "meal_plan",
+   "fieldtype": "Data",
+   "label": "Meal Plan"
+  },
+  {
+   "fieldname": "meal_plan_note",
+   "fieldtype": "Small Text",
+   "label": "Meal Plan Note"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-07-18 17:17:33.174226",
+ "modified_by": "Administrator",
+ "module": "Tour Management",
+ "name": "Tour Package Itenary",
+ "naming_rule": "Random",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

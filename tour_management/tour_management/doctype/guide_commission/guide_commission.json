@@ -10,8 +10,14 @@
   "guide",
   "guide_name",
   "share_percent",
+  "commission_type",
+  "column_break_5",
+  "account",
   "total_amount",
-  "note"
+  "paid_amount",
+  "paid_status",
+  "note",
+  "paid_reference"
  ],
  "fields": [
   {
@@ -32,7 +38,8 @@
   {
    "fieldname": "total_amount",
    "fieldtype": "Currency",
-   "label": "Total Amount"
+   "label": "Total Amount",
+   "read_only": 1
   },
   {
    "fieldname": "note",
@@ -44,12 +51,48 @@
    "fieldname": "guide_name",
    "fieldtype": "Data",
    "label": "Guide Name"
+  },
+  {
+   "fieldname": "account",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Account",
+   "options": "Account",
+   "reqd": 1
+  },
+  {
+   "fieldname": "commission_type",
+   "fieldtype": "Link",
+   "label": "Commission Type",
+   "options": "Expense Type"
+  },
+  {
+   "depends_on": "eval:doc.paid_amount > 0",
+   "fieldname": "paid_amount",
+   "fieldtype": "Currency",
+   "label": "Paid Amount",
+   "options": "<span class=\"indicator-pill whitespace-nowrap green\"><span>Paid</span></span>"
+  },
+  {
+   "fieldname": "paid_status",
+   "fieldtype": "HTML",
+   "label": "Paid Status"
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "paid_reference",
+   "fieldtype": "Data",
+   "label": "Paid Reference",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-05-04 11:06:44.259876",
+ "modified": "2023-06-30 09:52:55.557324",
  "modified_by": "Administrator",
  "module": "Tour Management",
  "name": "Guide Commission",

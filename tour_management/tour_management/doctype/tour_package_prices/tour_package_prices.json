@@ -1,0 +1,82 @@
+{
+ "actions": [],
+ "autoname": "autoincrement",
+ "creation": "2023-07-18 17:23:48.741578",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "title",
+  "section",
+  "number_of_person",
+  "fix_cost",
+  "transportation_type",
+  "transportation_cost",
+  "additional_cost",
+  "price"
+ ],
+ "fields": [
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Title"
+  },
+  {
+   "fieldname": "section",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Section",
+   "options": "Section 1\nSection 2\nSection 3\nSection 4\nSection 5\nSection 6\nSection 7\nSection 8\nSection 9\nSection 10"
+  },
+  {
+   "fieldname": "number_of_person",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Number of Person"
+  },
+  {
+   "fieldname": "fix_cost",
+   "fieldtype": "Currency",
+   "label": "Fix Cost",
+   "read_only": 1
+  },
+  {
+   "fieldname": "transportation_type",
+   "fieldtype": "Data",
+   "label": "Transportation Type",
+   "read_only": 1
+  },
+  {
+   "fieldname": "transportation_cost",
+   "fieldtype": "Currency",
+   "label": "Transportation Cost",
+   "read_only": 1
+  },
+  {
+   "fieldname": "additional_cost",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Misc. Cost"
+  },
+  {
+   "fieldname": "price",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Price"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-07-18 17:23:48.741578",
+ "modified_by": "Administrator",
+ "module": "Tour Management",
+ "name": "Tour Package Prices",
+ "naming_rule": "Random",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

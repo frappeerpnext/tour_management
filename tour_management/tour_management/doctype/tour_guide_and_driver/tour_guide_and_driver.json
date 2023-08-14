@@ -11,6 +11,7 @@
   "type",
   "phone_1",
   "phone_2",
+  "column_break_6",
   "address_line_1",
   "address_line_2",
   "total_payable",
@@ -22,6 +23,7 @@
    "allow_in_quick_entry": 1,
    "fieldname": "full_name",
    "fieldtype": "Data",
+   "in_filter": 1,
    "in_list_view": 1,
    "label": "Full Name",
    "reqd": 1,
@@ -72,11 +74,15 @@
    "fieldtype": "Select",
    "label": "Type",
    "options": "Driver\nGuide"
+  },
+  {
+   "fieldname": "column_break_6",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-05-05 11:33:12.356998",
+ "modified": "2023-07-18 09:44:29.519330",
  "modified_by": "Administrator",
  "module": "Tour Management",
  "name": "Tour Guide And Driver",
@@ -97,6 +103,7 @@
   }
  ],
  "quick_entry": 1,
+ "search_fields": "full_name,phone_1",
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],

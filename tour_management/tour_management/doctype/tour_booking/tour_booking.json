@@ -1,0 +1,637 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2023-07-19 10:04:11.954524",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "branch",
+  "booking_date",
+  "start_date",
+  "end_date",
+  "duration",
+  "column_break_4",
+  "tour_package",
+  "tour_package_title",
+  "price",
+  "child_rate",
+  "total_tour_package_price",
+  "column_break_12",
+  "total_pax",
+  "adult",
+  "child",
+  "section_break_17",
+  "vat",
+  "is_include_tax",
+  "company_information_section",
+  "company_profile",
+  "company_contact_name",
+  "company_contact_number",
+  "column_break_21",
+  "company_email",
+  "company_address",
+  "section_break_24",
+  "guest_information_section",
+  "guest_profile",
+  "guest_group",
+  "customer_name",
+  "phone_number",
+  "email",
+  "contact_name",
+  "contact_number",
+  "section_break_15",
+  "nationality",
+  "market_source",
+  "market_segment",
+  "section_break_22",
+  "additional_guest",
+  "cancelation_policy_section",
+  "cancelation_policy",
+  "hotels_tab",
+  "hotels",
+  "section_break_34",
+  "total_hotel_amount",
+  "column_break_35",
+  "total_room_nights",
+  "column_break_37",
+  "total_pax1",
+  "restaurants_tab",
+  "restaurants",
+  "total_restaurant_amount",
+  "tour_guide_driver_tab",
+  "guides_and_drivers",
+  "section_break_32",
+  "total_day",
+  "column_break_47",
+  "total_tour_guide_amount",
+  "section_break_49",
+  "tour_guide_note",
+  "transportations_tab",
+  "transportation",
+  "total_transportation_amount",
+  "additional_charge_tab",
+  "additional_charges",
+  "section_break_38",
+  "total_additional_charge",
+  "column_break_58",
+  "total_quantity",
+  "expenses_tab",
+  "expenses",
+  "section_break_42",
+  "total_expense",
+  "discount_tab",
+  "discounts",
+  "total_discount",
+  "payments_tab",
+  "tour_booking_payment",
+  "section_break_46",
+  "total_paid",
+  "tour_package_detail_tab",
+  "tour_package_detail_frame",
+  "itenaries",
+  "section_break_26",
+  "inclusions",
+  "column_break_28",
+  "exclusions",
+  "balance"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Booking Number",
+   "options": "TB.YYYY.-.####"
+  },
+  {
+   "fieldname": "branch",
+   "fieldtype": "Link",
+   "label": "Branch",
+   "options": "Branch"
+  },
+  {
+   "fieldname": "booking_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Booking Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "label": "Start Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "label": "End Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "duration",
+   "fieldtype": "Int",
+   "label": "Duration (Day)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "tour_package",
+   "fieldtype": "Link",
+   "label": "Tour Package",
+   "options": "Tour Packages",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "tour_package.tour_package_title",
+   "fieldname": "tour_package_title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Tour Package Title",
+   "length": 255
+  },
+  {
+   "fieldname": "price",
+   "fieldtype": "Currency",
+   "label": "Adut Rate"
+  },
+  {
+   "fieldname": "child_rate",
+   "fieldtype": "Currency",
+   "label": "Child Rate"
+  },
+  {
+   "fieldname": "total_tour_package_price",
+   "fieldtype": "Currency",
+   "label": "Total Tour Package Price",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_12",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_pax",
+   "fieldtype": "Int",
+   "label": "Total Pax",
+   "read_only": 1
+  },
+  {
+   "fieldname": "adult",
+   "fieldtype": "Int",
+   "label": "Adult"
+  },
+  {
+   "fieldname": "child",
+   "fieldtype": "Int",
+   "label": "Child"
+  },
+  {
+   "fieldname": "section_break_17",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "vat",
+   "fieldtype": "Float",
+   "label": "VAT",
+   "precision": "2"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_include_tax",
+   "fieldtype": "Check",
+   "label": "Is include Tax"
+  },
+  {
+   "fieldname": "company_information_section",
+   "fieldtype": "Section Break",
+   "label": "Company Information"
+  },
+  {
+   "fieldname": "company_profile",
+   "fieldtype": "Link",
+   "label": "Company Profile",
+   "options": "Company Profile"
+  },
+  {
+   "fieldname": "company_contact_name",
+   "fieldtype": "Data",
+   "label": "Contact Name"
+  },
+  {
+   "fieldname": "company_contact_number",
+   "fieldtype": "Data",
+   "label": "Contact Number"
+  },
+  {
+   "fieldname": "column_break_21",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "company_email",
+   "fieldtype": "Data",
+   "label": "Email"
+  },
+  {
+   "fieldname": "company_address",
+   "fieldtype": "Data",
+   "label": "Address"
+  },
+  {
+   "fieldname": "section_break_24",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "guest_information_section",
+   "fieldtype": "Section Break",
+   "label": "Guest Information"
+  },
+  {
+   "fieldname": "guest_profile",
+   "fieldtype": "Link",
+   "label": "Guest Profile",
+   "options": "Customer",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "guest_profile.customer_group",
+   "fieldname": "guest_group",
+   "fieldtype": "Data",
+   "label": "Guest Group"
+  },
+  {
+   "fetch_from": "guest_profile.customer_name_en",
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "in_list_view": 1,
+   "label": "Customer Name"
+  },
+  {
+   "fetch_from": "guest_profile.phone_number",
+   "fetch_if_empty": 1,
+   "fieldname": "phone_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Phone Number"
+  },
+  {
+   "fetch_from": "guest_profile.email_address",
+   "fetch_if_empty": 1,
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email"
+  },
+  {
+   "fieldname": "contact_name",
+   "fieldtype": "Data",
+   "label": "Contact Name"
+  },
+  {
+   "fieldname": "contact_number",
+   "fieldtype": "Data",
+   "label": "Contact Number"
+  },
+  {
+   "fieldname": "section_break_15",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "guest_profile.country",
+   "fetch_if_empty": 1,
+   "fieldname": "nationality",
+   "fieldtype": "Link",
+   "label": "Nationality",
+   "options": "Country"
+  },
+  {
+   "fetch_from": "guest_profile.market_source",
+   "fetch_if_empty": 1,
+   "fieldname": "market_source",
+   "fieldtype": "Link",
+   "label": "Market Source",
+   "options": "Lead Source"
+  },
+  {
+   "fetch_from": "guest_profile.market_segment",
+   "fetch_if_empty": 1,
+   "fieldname": "market_segment",
+   "fieldtype": "Link",
+   "label": "Market Segment",
+   "options": "Market Segment"
+  },
+  {
+   "fieldname": "section_break_22",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "additional_guest",
+   "fieldtype": "Table",
+   "label": "Additional Guest",
+   "options": "Tour Booking Additional Guest"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "cancelation_policy_section",
+   "fieldtype": "Section Break",
+   "label": "Cancelation Policy"
+  },
+  {
+   "fieldname": "cancelation_policy",
+   "fieldtype": "Text Editor",
+   "label": "Cancelation Policy"
+  },
+  {
+   "fieldname": "hotels_tab",
+   "fieldtype": "Tab Break",
+   "label": "Hotels"
+  },
+  {
+   "fieldname": "hotels",
+   "fieldtype": "Table",
+   "label": "Hotels",
+   "options": "Tour Booking Hotels"
+  },
+  {
+   "fieldname": "section_break_34",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "total_hotel_amount",
+   "fieldtype": "Currency",
+   "label": "Total Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_35",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_room_nights",
+   "fieldtype": "Int",
+   "label": "Total Room Nights",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_37",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_pax1",
+   "fieldtype": "Float",
+   "label": "Total Pax",
+   "read_only": 1
+  },
+  {
+   "fieldname": "restaurants_tab",
+   "fieldtype": "Tab Break",
+   "label": "Restaurants"
+  },
+  {
+   "fieldname": "restaurants",
+   "fieldtype": "Table",
+   "label": "Tour Booking Restaurant",
+   "options": "Tour Booking Restaurant"
+  },
+  {
+   "fieldname": "total_restaurant_amount",
+   "fieldtype": "Currency",
+   "label": "Total Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "tour_guide_driver_tab",
+   "fieldtype": "Tab Break",
+   "label": "Tour Guides"
+  },
+  {
+   "fieldname": "guides_and_drivers",
+   "fieldtype": "Table",
+   "options": "Tour Booking Guide And Driver"
+  },
+  {
+   "fieldname": "section_break_32",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "total_day",
+   "fieldtype": "Int",
+   "label": "Total Days",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_47",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_tour_guide_amount",
+   "fieldtype": "Currency",
+   "label": "Total Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_49",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "tour_guide_note",
+   "fieldtype": "Small Text",
+   "label": "Tour Guide Note"
+  },
+  {
+   "fieldname": "transportations_tab",
+   "fieldtype": "Tab Break",
+   "label": "Transportations"
+  },
+  {
+   "fieldname": "transportation",
+   "fieldtype": "Table",
+   "options": "Tour Booking Transportations"
+  },
+  {
+   "fieldname": "total_transportation_amount",
+   "fieldtype": "Currency",
+   "label": "Total Amount"
+  },
+  {
+   "fieldname": "additional_charge_tab",
+   "fieldtype": "Tab Break",
+   "label": "Additional Charge"
+  },
+  {
+   "fieldname": "additional_charges",
+   "fieldtype": "Table",
+   "options": "Tour Booking Additional Charge"
+  },
+  {
+   "fieldname": "section_break_38",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "total_additional_charge",
+   "fieldtype": "Currency",
+   "label": "Total Additional Charge",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_58",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_quantity",
+   "fieldtype": "Float",
+   "label": "Total Quantity",
+   "read_only": 1
+  },
+  {
+   "fieldname": "expenses_tab",
+   "fieldtype": "Tab Break",
+   "label": "Expenses"
+  },
+  {
+   "fieldname": "expenses",
+   "fieldtype": "Table",
+   "options": "Tour Booking Addition Expense"
+  },
+  {
+   "fieldname": "section_break_42",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "total_expense",
+   "fieldtype": "Currency",
+   "label": "Total Expense"
+  },
+  {
+   "fieldname": "discount_tab",
+   "fieldtype": "Tab Break",
+   "label": "Discount"
+  },
+  {
+   "fieldname": "discounts",
+   "fieldtype": "Table",
+   "options": "Tour Booking Discount"
+  },
+  {
+   "fieldname": "total_discount",
+   "fieldtype": "Currency",
+   "label": "Total Discount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "payments_tab",
+   "fieldtype": "Tab Break",
+   "label": "Payments"
+  },
+  {
+   "fieldname": "tour_booking_payment",
+   "fieldtype": "Table",
+   "label": "Payments",
+   "options": "Tour Booking Payments"
+  },
+  {
+   "fieldname": "section_break_46",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "total_paid",
+   "fieldtype": "Currency",
+   "label": "Total Paid",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:!doc.__islocal",
+   "fieldname": "tour_package_detail_tab",
+   "fieldtype": "Tab Break",
+   "label": "Tour Package Detail"
+  },
+  {
+   "default": "Tour Package A4",
+   "fieldname": "tour_package_detail_frame",
+   "fieldtype": "HTML",
+   "label": "Tour Package Detail Frame",
+   "options": "<div id=\"frame\"></div>"
+  },
+  {
+   "fieldname": "itenaries",
+   "fieldtype": "Table",
+   "hidden": 1,
+   "label": "Itenaries",
+   "options": "Tour Package Itenary"
+  },
+  {
+   "fieldname": "section_break_26",
+   "fieldtype": "Section Break",
+   "hidden": 1
+  },
+  {
+   "fieldname": "inclusions",
+   "fieldtype": "Table",
+   "hidden": 1,
+   "label": "Inclusions",
+   "options": "Tour Package Inclusions"
+  },
+  {
+   "fieldname": "column_break_28",
+   "fieldtype": "Column Break",
+   "hidden": 1
+  },
+  {
+   "fieldname": "exclusions",
+   "fieldtype": "Table",
+   "hidden": 1,
+   "label": "Exclusions",
+   "options": "Tour Package Prices"
+  },
+  {
+   "fieldname": "balance",
+   "fieldtype": "Currency",
+   "hidden": 1,
+   "label": "Balance"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-07-19 10:04:11.954524",
+ "modified_by": "Administrator",
+ "module": "Tour Management",
+ "name": "Tour Booking",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Tour Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

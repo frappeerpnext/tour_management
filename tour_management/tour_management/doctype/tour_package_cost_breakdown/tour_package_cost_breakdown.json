@@ -1,0 +1,56 @@
+{
+ "actions": [],
+ "autoname": "hash",
+ "creation": "2023-07-19 08:45:56.767566",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "type",
+  "days",
+  "description",
+  "rate"
+ ],
+ "fields": [
+  {
+   "fieldname": "type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Type",
+   "options": "Tour Guide\nLand Service Fee\nEntrance Fee\nExtra Charge\nOthers"
+  },
+  {
+   "fieldname": "days",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Days",
+   "options": "Day 1\nDay 2\nDay 3\nDay 4\nDay 5\nDay 6\nDay 7\nDay 8\nDay 9\nDay 10\nDay 11\nDay 12\nDay 13\nDay 14\nDay 15\nDay 16\nDay 17\nDay 18\nDay 19\nDay 20\nDay 21\nDay 22\nDay 23\nDay 24\nDay 25\nDay 26\nDay 27\nDay 28\nDay 29\nDay 30\nDay 31"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Description",
+   "length": 250
+  },
+  {
+   "fieldname": "rate",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Rate"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-07-19 08:45:56.767566",
+ "modified_by": "Administrator",
+ "module": "Tour Management",
+ "name": "Tour Package Cost Breakdown",
+ "naming_rule": "Random",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

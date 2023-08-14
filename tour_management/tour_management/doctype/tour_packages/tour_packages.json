@@ -1,0 +1,294 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:tour_package",
+ "creation": "2023-07-19 08:46:01.928215",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "tour_package",
+  "tour_package_title",
+  "tour_destination",
+  "tour_package_type",
+  "min_pax",
+  "column_break_4",
+  "duration",
+  "total_night",
+  "cost",
+  "price",
+  "itenaries_section",
+  "itenaries",
+  "tour_inclusions_and_exclusions_section",
+  "inclusions",
+  "inclusions_detail",
+  "column_break_12",
+  "exclusions",
+  "exclusions_detail",
+  "hotel_prices_tab",
+  "low_season",
+  "column_break_22",
+  "high_season",
+  "price_detail_tab",
+  "tour_package_prices",
+  "fix_cost_tab",
+  "fix_cost",
+  "section_break_20",
+  "total_fix_cost",
+  "transportation_cost_tab",
+  "transportation_cost",
+  "cost_breakdown_detail_tab",
+  "cost_breakdowns",
+  "section_break_26",
+  "total_cost",
+  "tour_leader_section",
+  "total_pax_include_tour_leader",
+  "column_break_36",
+  "tour_leader_cost"
+ ],
+ "fields": [
+  {
+   "fieldname": "tour_package",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Tour Package",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "tour_package_title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Tour Package Title",
+   "length": 255
+  },
+  {
+   "fieldname": "tour_destination",
+   "fieldtype": "Data",
+   "label": "Tour Destination"
+  },
+  {
+   "fieldname": "tour_package_type",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Tour Package Type",
+   "options": "Tour Package Type"
+  },
+  {
+   "fieldname": "min_pax",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "MIn Pax"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "duration",
+   "fieldtype": "Data",
+   "label": "Duration"
+  },
+  {
+   "fieldname": "total_night",
+   "fieldtype": "Data",
+   "label": "Total Night"
+  },
+  {
+   "fieldname": "cost",
+   "fieldtype": "Currency",
+   "hidden": 1,
+   "label": "Estimate Cost"
+  },
+  {
+   "fieldname": "price",
+   "fieldtype": "Currency",
+   "hidden": 1,
+   "in_list_view": 1,
+   "label": "Fix Cost"
+  },
+  {
+   "fieldname": "itenaries_section",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "itenaries",
+   "fieldtype": "Table",
+   "label": "Itenaries",
+   "options": "Tour Package Itenary"
+  },
+  {
+   "fieldname": "tour_inclusions_and_exclusions_section",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "inclusions",
+   "fieldtype": "Table",
+   "hidden": 1,
+   "label": "Inclusions",
+   "options": "Tour Package Inclusions"
+  },
+  {
+   "fieldname": "inclusions_detail",
+   "fieldtype": "Text Editor",
+   "label": "Inclusions Detail"
+  },
+  {
+   "fieldname": "column_break_12",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "exclusions",
+   "fieldtype": "Table",
+   "hidden": 1,
+   "label": "Exclusions",
+   "options": "Tour Package Exclusions"
+  },
+  {
+   "fieldname": "exclusions_detail",
+   "fieldtype": "Text Editor",
+   "label": "Exclusions Detail"
+  },
+  {
+   "fieldname": "hotel_prices_tab",
+   "fieldtype": "Tab Break",
+   "label": "Hotel Prices"
+  },
+  {
+   "fieldname": "low_season",
+   "fieldtype": "Table",
+   "label": "Low Season",
+   "options": "Tour Package Hotel Price"
+  },
+  {
+   "fieldname": "column_break_22",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "high_season",
+   "fieldtype": "Table",
+   "label": "High Season",
+   "options": "Tour Package Hotel Price"
+  },
+  {
+   "fieldname": "price_detail_tab",
+   "fieldtype": "Tab Break",
+   "label": "Price Detail"
+  },
+  {
+   "description": "The price below is price per person",
+   "fieldname": "tour_package_prices",
+   "fieldtype": "Table",
+   "options": "Tour Package Prices"
+  },
+  {
+   "fieldname": "fix_cost_tab",
+   "fieldtype": "Tab Break",
+   "label": "Fix Cost"
+  },
+  {
+   "fieldname": "fix_cost",
+   "fieldtype": "Table",
+   "label": "Fix Cost",
+   "options": "Tour Package Fix Cost"
+  },
+  {
+   "fieldname": "section_break_20",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "total_fix_cost",
+   "fieldtype": "Currency",
+   "label": "Total Fix Cost",
+   "read_only": 1
+  },
+  {
+   "fieldname": "transportation_cost_tab",
+   "fieldtype": "Tab Break",
+   "label": "Transportation Cost"
+  },
+  {
+   "fieldname": "transportation_cost",
+   "fieldtype": "Table",
+   "label": "Transportation Cost",
+   "options": "Tour Package Transportation Rate"
+  },
+  {
+   "fieldname": "cost_breakdown_detail_tab",
+   "fieldtype": "Tab Break",
+   "label": "Misc. Cost"
+  },
+  {
+   "fieldname": "cost_breakdowns",
+   "fieldtype": "Table",
+   "label": "Cost",
+   "options": "Tour Package Cost Breakdown"
+  },
+  {
+   "fieldname": "section_break_26",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "total_cost",
+   "fieldtype": "Currency",
+   "label": "Total Cost"
+  },
+  {
+   "fieldname": "tour_leader_section",
+   "fieldtype": "Section Break",
+   "label": "Tour Leader"
+  },
+  {
+   "fieldname": "total_pax_include_tour_leader",
+   "fieldtype": "Int",
+   "label": "Number of Pax Include Tour Leader Charge"
+  },
+  {
+   "fieldname": "column_break_36",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "tour_leader_cost",
+   "fieldtype": "Currency",
+   "label": "Tour Leader Cost"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-07-19 08:46:01.928215",
+ "modified_by": "Administrator",
+ "module": "Tour Management",
+ "name": "Tour Packages",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Tour Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "tour_package_title",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

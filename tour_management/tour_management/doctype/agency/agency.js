@@ -4,13 +4,19 @@
 frappe.ui.form.on('Agency', {
 	refresh: function (frm) {
 		if (!frm.is_new()) {
-			frm.dashboard.add_indicator(__('Receiveable: {0}',
-				[format_currency(10)]), 'blue')
-			frm.dashboard.add_indicator(__('Total paid: {0}',
-				[format_currency(10)]), 'green')
-			frm.dashboard.add_indicator(__('Remaining Balance: {0}',
-				[format_currency(10)]), 'red')
+			frappe.call({
+				type: "GET",
+				method: "tour_management.tour_management.doctype.agency.agency.get_agency_balance",
+				args: { "name": frm.doc.name },
+				callback: function (r) {
+					console.log(r.message)
+					frm.dashboard.add_indicator(__('Receiveable: {0}',
+						[format_currency(r.message.total_receiveable)]), 'blue')
+				}
+			})
+
 		}
+
 
 	}
 

@@ -1,0 +1,262 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2023-06-14 10:03:53.311369",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "invoice_tab",
+  "company",
+  "naming_series",
+  "agency",
+  "agency_name",
+  "posting_date",
+  "column_break_4",
+  "agency_address",
+  "agency_phone",
+  "start_date",
+  "end_date",
+  "column_break_9",
+  "is_group_tour",
+  "include_vat",
+  "vat_rate",
+  "vat_amount",
+  "tour_packages_section",
+  "get_sales_package",
+  "packages",
+  "summary_section",
+  "total_vouchers",
+  "paid_amount",
+  "column_break_19",
+  "gross_sale",
+  "total_amount",
+  "description_section",
+  "description",
+  "column_break_25",
+  "other_note",
+  "payment_tab",
+  "payments",
+  "amended_from",
+  "cost_center"
+ ],
+ "fields": [
+  {
+   "fieldname": "agency",
+   "fieldtype": "Link",
+   "label": "Agency",
+   "options": "Agency",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "agency.agency_name",
+   "fetch_if_empty": 1,
+   "fieldname": "agency_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Agency Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "label": "Start Date"
+  },
+  {
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "label": "End Date"
+  },
+  {
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Posting Date",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "agency.address_line_1",
+   "fieldname": "agency_address",
+   "fieldtype": "Data",
+   "label": "Agency Address"
+  },
+  {
+   "fetch_from": "agency.phone_1",
+   "fieldname": "agency_phone",
+   "fieldtype": "Data",
+   "label": "Agency Phone"
+  },
+  {
+   "fieldname": "tour_packages_section",
+   "fieldtype": "Section Break",
+   "label": "Tour Packages"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_9",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_group_tour",
+   "fieldtype": "Check",
+   "label": "Is Group Tour"
+  },
+  {
+   "default": "0",
+   "fieldname": "include_vat",
+   "fieldtype": "Check",
+   "label": "Include VAT"
+  },
+  {
+   "default": "10",
+   "depends_on": "eval:doc.include_vat === 1",
+   "fieldname": "vat_rate",
+   "fieldtype": "Percent",
+   "label": "VAT Rate (%)"
+  },
+  {
+   "depends_on": "eval:doc.include_vat === 1",
+   "fieldname": "vat_amount",
+   "fieldtype": "Currency",
+   "label": "VAT Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "packages",
+   "fieldtype": "Table",
+   "label": "Packages",
+   "options": "Agency Sales Invoice Item"
+  },
+  {
+   "fieldname": "description_section",
+   "fieldtype": "Section Break",
+   "label": "Description"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description"
+  },
+  {
+   "fieldname": "other_note",
+   "fieldtype": "Data",
+   "label": "Other Note"
+  },
+  {
+   "fieldname": "summary_section",
+   "fieldtype": "Section Break",
+   "label": "Summary"
+  },
+  {
+   "fieldname": "total_vouchers",
+   "fieldtype": "Int",
+   "label": "Total Vouchers"
+  },
+  {
+   "fieldname": "gross_sale",
+   "fieldtype": "Currency",
+   "label": "Gross Sale",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Total Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_19",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_25",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "get_sales_package",
+   "fieldtype": "Button",
+   "label": "Get Sales Package"
+  },
+  {
+   "fieldname": "paid_amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Paid Amount"
+  },
+  {
+   "fieldname": "payment_tab",
+   "fieldtype": "Tab Break",
+   "label": "Payment"
+  },
+  {
+   "fieldname": "invoice_tab",
+   "fieldtype": "Tab Break",
+   "label": "Invoice"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "payments",
+   "fieldtype": "Table",
+   "label": "Payment",
+   "options": "Agency Sale Invoice Payment"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Agency Sales Invoice",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "cost_center",
+   "fieldtype": "Link",
+   "label": "Cost Center",
+   "options": "Cost Center"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2023-07-03 10:54:13.719723",
+ "modified_by": "Administrator",
+ "module": "Tour Management",
+ "name": "Agency Sales Invoice",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

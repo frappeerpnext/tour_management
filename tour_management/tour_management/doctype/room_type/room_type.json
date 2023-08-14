@@ -1,0 +1,101 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2023-07-18 16:54:10.870948",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "room_type_group",
+  "naming_series",
+  "property",
+  "room_type",
+  "alias",
+  "base_adult",
+  "base_child",
+  "rate",
+  "sort_order"
+ ],
+ "fields": [
+  {
+   "fieldname": "room_type_group",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Room Type Group",
+   "options": "Room Type Group"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Room Type ID",
+   "options": "RT.-.####"
+  },
+  {
+   "fieldname": "property",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Property",
+   "options": "Branch"
+  },
+  {
+   "fieldname": "room_type",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Room Type"
+  },
+  {
+   "fieldname": "alias",
+   "fieldtype": "Data",
+   "label": "Alias",
+   "reqd": 1
+  },
+  {
+   "fieldname": "base_adult",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Base Adult"
+  },
+  {
+   "fieldname": "base_child",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Base Child"
+  },
+  {
+   "fieldname": "rate",
+   "fieldtype": "Currency",
+   "label": "Rate"
+  },
+  {
+   "fieldname": "sort_order",
+   "fieldtype": "Int",
+   "label": "Sort Order"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-07-18 17:00:09.772667",
+ "modified_by": "Administrator",
+ "module": "Tour Management",
+ "name": "Room Type",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

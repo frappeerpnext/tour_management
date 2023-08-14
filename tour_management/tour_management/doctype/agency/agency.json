@@ -13,6 +13,7 @@
   "contact_section",
   "phone_1",
   "phone_2",
+  "company_name",
   "column_break_8",
   "address_line_1",
   "address_line_2",
@@ -33,7 +34,10 @@
    "allow_in_quick_entry": 1,
    "fieldname": "agency_name",
    "fieldtype": "Data",
+   "in_filter": 1,
+   "in_global_search": 1,
    "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Agency Name",
    "reqd": 1
   },
@@ -70,18 +74,21 @@
   {
    "fieldname": "total_receivable",
    "fieldtype": "Currency",
+   "hidden": 1,
    "label": "Total Receivable",
    "read_only": 1
   },
   {
    "fieldname": "total_paid",
    "fieldtype": "Currency",
+   "hidden": 1,
    "label": "Total Paid",
    "read_only": 1
   },
   {
    "fieldname": "total_remaining_balance",
    "fieldtype": "Currency",
+   "hidden": 1,
    "label": "Total Remaining Balance",
    "read_only": 1
   },
@@ -103,6 +110,11 @@
    "fieldname": "vouchers_section",
    "fieldtype": "Section Break",
    "label": "Vouchers"
+  },
+  {
+   "fieldname": "company_name",
+   "fieldtype": "Data",
+   "label": "Company Name"
   }
  ],
  "index_web_pages_for_search": 1,
@@ -113,7 +125,7 @@
    "link_fieldname": "agency"
   }
  ],
- "modified": "2023-04-04 14:22:46.099686",
+ "modified": "2023-07-18 08:49:51.849601",
  "modified_by": "Administrator",
  "module": "Tour Management",
  "name": "Agency",
@@ -135,6 +147,7 @@
   }
  ],
  "quick_entry": 1,
+ "search_fields": "agency_name,company_name",
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],

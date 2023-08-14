@@ -1,0 +1,76 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:ticket_category_name",
+ "creation": "2023-07-18 14:45:30.669110",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "ticket_category_name",
+  "ticket_code_prefix",
+  "show_flight_information",
+  "note"
+ ],
+ "fields": [
+  {
+   "default": "0",
+   "fieldname": "show_flight_information",
+   "fieldtype": "Check",
+   "label": "Show Flight Information"
+  },
+  {
+   "fieldname": "note",
+   "fieldtype": "Data",
+   "label": "Note"
+  },
+  {
+   "fieldname": "ticket_category_name",
+   "fieldtype": "Data",
+   "label": "Ticket Category Name",
+   "unique": 1
+  },
+  {
+   "fieldname": "ticket_code_prefix",
+   "fieldtype": "Data",
+   "label": "Ticket Code Prefix"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-07-19 11:25:40.444984",
+ "modified_by": "Administrator",
+ "module": "Tour Management",
+ "name": "Ticket Category",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Tour Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

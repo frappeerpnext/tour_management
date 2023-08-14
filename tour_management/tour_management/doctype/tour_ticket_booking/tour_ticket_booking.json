@@ -1,0 +1,559 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2023-07-19 10:25:05.090648",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "company",
+  "naming_series",
+  "branch",
+  "reference",
+  "booking_date",
+  "ticket_type",
+  "column_break_6",
+  "posting_date",
+  "arrival_date",
+  "departure",
+  "duration",
+  "column_break_5",
+  "transportation_company",
+  "destination",
+  "confirm_booking_by",
+  "confirm_booking_by_phone_number",
+  "section_break_15",
+  "is_round_trip_bus",
+  "return_date_bus",
+  "return_destination",
+  "section_break_17",
+  "total_pax",
+  "column_break_19",
+  "adult",
+  "column_break_21",
+  "child",
+  "fight_information_section",
+  "fight_number",
+  "air_plane_type",
+  "air_line_code",
+  "filght_note",
+  "column_break_16",
+  "service_class",
+  "is_round_trip",
+  "return_date",
+  "arrival_return_date",
+  "destination_flight_return",
+  "return_flight_number",
+  "guest_information_section",
+  "guest_profile",
+  "guest_name",
+  "customer_phone_number",
+  "contact_name",
+  "contact_phone_number",
+  "column_break_15",
+  "nationality",
+  "market_source",
+  "market_segment",
+  "ticket_details_section",
+  "ticket_booking_item",
+  "section_break_20",
+  "total_quantity",
+  "vat",
+  "is_include_tax",
+  "column_break_22",
+  "income_account",
+  "column_break_56",
+  "balance",
+  "total_amount",
+  "section_break_42",
+  "discount_type",
+  "column_break_44",
+  "discount",
+  "column_break_46",
+  "total_discount",
+  "column_break_63",
+  "discount_account",
+  "cancellation_policy_section",
+  "cancellation_policy",
+  "show_flight_information",
+  "account_section",
+  "cost_center",
+  "payments_tab",
+  "payments",
+  "section_break_44",
+  "total_payment",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Document Number",
+   "options": "TB.YYYY.-.####"
+  },
+  {
+   "fieldname": "branch",
+   "fieldtype": "Link",
+   "label": "Branch",
+   "options": "Branch",
+   "reqd": 1
+  },
+  {
+   "fieldname": "reference",
+   "fieldtype": "Data",
+   "label": "Reference"
+  },
+  {
+   "fieldname": "booking_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Booking Date"
+  },
+  {
+   "fieldname": "ticket_type",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Ticket Category",
+   "options": "Ticket Category"
+  },
+  {
+   "fieldname": "column_break_6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "departure",
+   "fieldtype": "Datetime",
+   "label": "Departure"
+  },
+  {
+   "fieldname": "arrival_date",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "Arrival Date"
+  },
+  {
+   "fieldname": "duration",
+   "fieldtype": "Data",
+   "label": "Duration"
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "transportation_company",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Transportation Company",
+   "options": "Transportation Company"
+  },
+  {
+   "fieldname": "destination",
+   "fieldtype": "Link",
+   "label": "Destination",
+   "options": "Transportation Destination"
+  },
+  {
+   "fieldname": "confirm_booking_by",
+   "fieldtype": "Link",
+   "label": "Confirm Booking By",
+   "options": "Contact"
+  },
+  {
+   "fetch_from": "confirm_booking_by.phone",
+   "fetch_if_empty": 1,
+   "fieldname": "confirm_booking_by_phone_number",
+   "fieldtype": "Data",
+   "label": "Phone Number"
+  },
+  {
+   "fieldname": "section_break_15",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_round_trip_bus",
+   "fieldtype": "Check",
+   "label": "Is Round Trip"
+  },
+  {
+   "depends_on": "eval:doc.is_round_trip_bus ==1",
+   "fieldname": "return_date_bus",
+   "fieldtype": "Datetime",
+   "label": "Return Date"
+  },
+  {
+   "depends_on": "eval:doc.is_round_trip_bus ==1",
+   "fieldname": "return_destination",
+   "fieldtype": "Link",
+   "label": "Destination",
+   "options": "Transportation Destination"
+  },
+  {
+   "fieldname": "section_break_17",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "total_pax",
+   "fieldtype": "Int",
+   "label": "Total Pax",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_19",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "adult",
+   "fieldtype": "Int",
+   "label": "Adult"
+  },
+  {
+   "fieldname": "column_break_21",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "child",
+   "fieldtype": "Int",
+   "label": "Child"
+  },
+  {
+   "depends_on": "eval:doc.show_flight_information ==1",
+   "fieldname": "fight_information_section",
+   "fieldtype": "Section Break",
+   "label": "Fight Information"
+  },
+  {
+   "fieldname": "fight_number",
+   "fieldtype": "Data",
+   "label": "Fight Number"
+  },
+  {
+   "fieldname": "air_plane_type",
+   "fieldtype": "Data",
+   "label": "Air Plane Type"
+  },
+  {
+   "fieldname": "air_line_code",
+   "fieldtype": "Data",
+   "label": "Air Line Code"
+  },
+  {
+   "fieldname": "filght_note",
+   "fieldtype": "Small Text",
+   "label": "Note"
+  },
+  {
+   "fieldname": "column_break_16",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "service_class",
+   "fieldtype": "Data",
+   "label": "Service Class"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_round_trip",
+   "fieldtype": "Check",
+   "label": "Is Round Trip"
+  },
+  {
+   "depends_on": "eval:doc.is_round_trip ==1",
+   "fieldname": "return_date",
+   "fieldtype": "Datetime",
+   "label": "Return Date"
+  },
+  {
+   "depends_on": "eval:doc.is_round_trip ==1",
+   "fieldname": "arrival_return_date",
+   "fieldtype": "Datetime",
+   "label": "Arrival Date"
+  },
+  {
+   "depends_on": "eval:doc.is_round_trip ==1",
+   "fieldname": "destination_flight_return",
+   "fieldtype": "Link",
+   "label": "Destination",
+   "options": "Transportation Destination"
+  },
+  {
+   "depends_on": "eval:doc.is_round_trip ==1",
+   "fieldname": "return_flight_number",
+   "fieldtype": "Data",
+   "label": "Return Flight Number"
+  },
+  {
+   "fieldname": "guest_information_section",
+   "fieldtype": "Section Break",
+   "label": "Guest Information"
+  },
+  {
+   "default": "General Customer",
+   "fieldname": "guest_profile",
+   "fieldtype": "Link",
+   "label": "Guest Profile",
+   "options": "Customer"
+  },
+  {
+   "fetch_from": "guest_profile.customer_name",
+   "fieldname": "guest_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Guest Name"
+  },
+  {
+   "fetch_from": "guest_profile.phone_number",
+   "fetch_if_empty": 1,
+   "fieldname": "customer_phone_number",
+   "fieldtype": "Data",
+   "label": "Phone Number"
+  },
+  {
+   "fieldname": "contact_name",
+   "fieldtype": "Link",
+   "label": "Contact Name",
+   "options": "Contact"
+  },
+  {
+   "fetch_from": "contact_name.phone",
+   "fieldname": "contact_phone_number",
+   "fieldtype": "Data",
+   "label": "Phone Number"
+  },
+  {
+   "fieldname": "column_break_15",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "nationality",
+   "fieldtype": "Link",
+   "label": "Nationality",
+   "options": "Country"
+  },
+  {
+   "fieldname": "market_source",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Market Source",
+   "options": "Lead Source"
+  },
+  {
+   "fieldname": "market_segment",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Market Segment",
+   "options": "Market Segment"
+  },
+  {
+   "fieldname": "ticket_details_section",
+   "fieldtype": "Section Break",
+   "label": "Ticket Details"
+  },
+  {
+   "fieldname": "ticket_booking_item",
+   "fieldtype": "Table",
+   "options": "Ticket Booking Item"
+  },
+  {
+   "fieldname": "section_break_20",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "total_quantity",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Total Quantity",
+   "read_only": 1
+  },
+  {
+   "fieldname": "vat",
+   "fieldtype": "Float",
+   "label": "VAT"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_include_tax",
+   "fieldtype": "Check",
+   "label": "Is Include Tax"
+  },
+  {
+   "fieldname": "column_break_22",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Total Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "balance",
+   "fieldtype": "Currency",
+   "label": "Balance",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_42",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "Percent",
+   "fieldname": "discount_type",
+   "fieldtype": "Select",
+   "label": "Discount Type",
+   "options": "Percent\nAmount"
+  },
+  {
+   "fieldname": "column_break_44",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "discount",
+   "fieldtype": "Float",
+   "label": "Discount"
+  },
+  {
+   "fieldname": "column_break_46",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_discount",
+   "fieldtype": "Currency",
+   "label": "Total Discount",
+   "read_only": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "cancellation_policy_section",
+   "fieldtype": "Section Break",
+   "label": "Cancellation Policy"
+  },
+  {
+   "fieldname": "cancellation_policy",
+   "fieldtype": "Text Editor",
+   "label": "Policy"
+  },
+  {
+   "default": "0",
+   "fetch_from": "ticket_type.show_flight_information",
+   "fieldname": "show_flight_information",
+   "fieldtype": "Check",
+   "hidden": 1,
+   "label": "show_flight_information"
+  },
+  {
+   "fieldname": "payments_tab",
+   "fieldtype": "Tab Break",
+   "label": "Payments"
+  },
+  {
+   "fieldname": "payments",
+   "fieldtype": "Table",
+   "options": "Tour Booking Payments"
+  },
+  {
+   "fieldname": "section_break_44",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "total_payment",
+   "fieldtype": "Currency",
+   "label": "Total Payment"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Tour Ticket Booking",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "fieldname": "discount_account",
+   "fieldtype": "Link",
+   "label": "Discount Account",
+   "options": "Account"
+  },
+  {
+   "fieldname": "column_break_63",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "income_account",
+   "fieldtype": "Link",
+   "label": "Income Account",
+   "options": "Account"
+  },
+  {
+   "fieldname": "account_section",
+   "fieldtype": "Section Break",
+   "label": "Account"
+  },
+  {
+   "fieldname": "cost_center",
+   "fieldtype": "Link",
+   "label": "Cost Center",
+   "options": "Cost Center"
+  },
+  {
+   "fieldname": "column_break_56",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "label": "Posting Date"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2023-08-14 08:37:06.459289",
+ "modified_by": "Administrator",
+ "module": "Tour Management",
+ "name": "Tour Ticket Booking",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Tour Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

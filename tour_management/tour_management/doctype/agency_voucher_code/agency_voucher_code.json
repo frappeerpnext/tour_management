@@ -34,6 +34,7 @@
   {
    "fieldname": "agency",
    "fieldtype": "Link",
+   "in_filter": 1,
    "label": "Agency",
    "options": "Agency",
    "reqd": 1
@@ -41,7 +42,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-04-04 13:52:50.767667",
+ "modified": "2023-07-07 16:07:34.101978",
  "modified_by": "Administrator",
  "module": "Tour Management",
  "name": "Agency Voucher Code",

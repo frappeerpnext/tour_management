@@ -1,0 +1,513 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2023-07-19 10:18:07.963796",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "booking_reference",
+  "company",
+  "branch",
+  "hotel_name",
+  "hotel_star",
+  "posting_date",
+  "booking_date",
+  "arrival_date",
+  "departure_date",
+  "total_nights",
+  "column_break_4",
+  "pax",
+  "adult",
+  "child",
+  "confirm_booking_by",
+  "confirm_booking_phone_number",
+  "section_break_16",
+  "vat",
+  "is_include_tax",
+  "company_profile_section",
+  "company_profile",
+  "company_name",
+  "company_address",
+  "column_break_18",
+  "company_contact_name",
+  "company_contact_phone_number",
+  "company_email",
+  "guest_information_section",
+  "guest_profile",
+  "guest_group",
+  "phone_number",
+  "email",
+  "contact_name",
+  "contact_number",
+  "column_break_13",
+  "nationality",
+  "market_source",
+  "market_segment",
+  "booking_room_section",
+  "room_types",
+  "section_break_23",
+  "total_rooms",
+  "total_room_night",
+  "column_break_24",
+  "total_amount",
+  "column_break_27",
+  "balance",
+  "section_break_48",
+  "income_account",
+  "column_break_50",
+  "cost_center",
+  "section_break_46",
+  "discount_type",
+  "column_break",
+  "discount",
+  "column_break_56",
+  "discount_amount",
+  "discount_account",
+  "section_break",
+  "inclusions",
+  "note",
+  "additional_guest_tab",
+  "additional_guest",
+  "payment_tab",
+  "payments",
+  "section_break_36",
+  "total_payment",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Booking Number",
+   "options": "HB.YYYY.-.######"
+  },
+  {
+   "fieldname": "booking_reference",
+   "fieldtype": "Data",
+   "label": "Booking Reference"
+  },
+  {
+   "fieldname": "branch",
+   "fieldtype": "Link",
+   "label": "Branch",
+   "options": "Branch",
+   "reqd": 1
+  },
+  {
+   "fieldname": "hotel_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Hotel Name",
+   "options": "Hotels"
+  },
+  {
+   "fetch_from": "hotel_name.star_level",
+   "fieldname": "hotel_star",
+   "fieldtype": "Rating",
+   "label": "Star"
+  },
+  {
+   "fieldname": "booking_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Booking Date"
+  },
+  {
+   "fieldname": "arrival_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Arrival Date"
+  },
+  {
+   "fieldname": "departure_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Departure Date"
+  },
+  {
+   "fieldname": "total_nights",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Total Nights",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "pax",
+   "fieldtype": "Int",
+   "label": "Pax"
+  },
+  {
+   "fieldname": "adult",
+   "fieldtype": "Int",
+   "label": "Adult"
+  },
+  {
+   "fieldname": "child",
+   "fieldtype": "Int",
+   "label": "Child"
+  },
+  {
+   "fieldname": "confirm_booking_by",
+   "fieldtype": "Link",
+   "label": "Confirm Booking By",
+   "options": "Contact"
+  },
+  {
+   "fetch_from": "confirm_booking_by.phone",
+   "fieldname": "confirm_booking_phone_number",
+   "fieldtype": "Data",
+   "label": "Phone Number"
+  },
+  {
+   "fieldname": "section_break_16",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "vat",
+   "fieldtype": "Float",
+   "hidden": 1,
+   "label": "VAT",
+   "precision": "2"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_include_tax",
+   "fieldtype": "Check",
+   "hidden": 1,
+   "label": "Is include Tax"
+  },
+  {
+   "fieldname": "company_profile_section",
+   "fieldtype": "Section Break",
+   "label": "Company Profile"
+  },
+  {
+   "fieldname": "company_profile",
+   "fieldtype": "Link",
+   "label": "Company Profile",
+   "options": "Company Profile"
+  },
+  {
+   "fetch_from": "company_profile.company_name",
+   "fieldname": "company_name",
+   "fieldtype": "Data",
+   "label": "Company Name"
+  },
+  {
+   "fieldname": "company_address",
+   "fieldtype": "Data",
+   "label": "Address"
+  },
+  {
+   "fieldname": "column_break_18",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "company_profile.contact_name",
+   "fetch_if_empty": 1,
+   "fieldname": "company_contact_name",
+   "fieldtype": "Data",
+   "label": "Contact Name"
+  },
+  {
+   "fetch_from": "company_profile.contact_phone",
+   "fetch_if_empty": 1,
+   "fieldname": "company_contact_phone_number",
+   "fieldtype": "Data",
+   "label": "Phone Number"
+  },
+  {
+   "fieldname": "company_email",
+   "fieldtype": "Data",
+   "label": "Email"
+  },
+  {
+   "fieldname": "guest_information_section",
+   "fieldtype": "Section Break",
+   "label": "Guest Information"
+  },
+  {
+   "default": "General Customer",
+   "fieldname": "guest_profile",
+   "fieldtype": "Link",
+   "label": "Guest Profile",
+   "options": "Customer"
+  },
+  {
+   "fetch_from": "guest_profile.customer_group",
+   "fieldname": "guest_group",
+   "fieldtype": "Data",
+   "label": "Guest Group"
+  },
+  {
+   "fetch_from": "guest_profile.phone_number",
+   "fetch_if_empty": 1,
+   "fieldname": "phone_number",
+   "fieldtype": "Data",
+   "label": "Phone Number"
+  },
+  {
+   "fetch_from": "guest_profile.email_address",
+   "fetch_if_empty": 1,
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email"
+  },
+  {
+   "fieldname": "contact_name",
+   "fieldtype": "Data",
+   "label": "Contact Name"
+  },
+  {
+   "fieldname": "contact_number",
+   "fieldtype": "Data",
+   "label": "Contact Number"
+  },
+  {
+   "fieldname": "column_break_13",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "guest_profile.country",
+   "fetch_if_empty": 1,
+   "fieldname": "nationality",
+   "fieldtype": "Link",
+   "label": "Nationality",
+   "options": "Country"
+  },
+  {
+   "fetch_from": "guest_profile.business_source",
+   "fetch_if_empty": 1,
+   "fieldname": "market_source",
+   "fieldtype": "Link",
+   "label": "Market Source",
+   "options": "Lead Source"
+  },
+  {
+   "fetch_from": "guest_profile.market_segment",
+   "fetch_if_empty": 1,
+   "fieldname": "market_segment",
+   "fieldtype": "Link",
+   "label": "Market Segment",
+   "options": "Market Segment"
+  },
+  {
+   "fieldname": "booking_room_section",
+   "fieldtype": "Section Break",
+   "label": "Booking Room"
+  },
+  {
+   "fieldname": "room_types",
+   "fieldtype": "Table",
+   "label": "Room Types",
+   "options": "Hotel Booking Room Type"
+  },
+  {
+   "fieldname": "section_break_23",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "total_rooms",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Total Rooms",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_24",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_room_night",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Total Room Night",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_27",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Total Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "balance",
+   "fieldtype": "Currency",
+   "label": "Balance",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_46",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "Percent",
+   "fieldname": "discount_type",
+   "fieldtype": "Select",
+   "label": "Discount Type",
+   "options": "Percent\nAmount"
+  },
+  {
+   "fieldname": "column_break",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "discount",
+   "fieldtype": "Float",
+   "label": "Discount"
+  },
+  {
+   "fieldname": "column_break_50",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "discount_amount",
+   "fieldtype": "Currency",
+   "label": "Discount Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "inclusions",
+   "fieldtype": "Small Text",
+   "label": "Inclusions"
+  },
+  {
+   "fieldname": "note",
+   "fieldtype": "Small Text",
+   "label": "Note"
+  },
+  {
+   "fieldname": "additional_guest_tab",
+   "fieldtype": "Tab Break",
+   "label": "Additional Guest"
+  },
+  {
+   "fieldname": "additional_guest",
+   "fieldtype": "Table",
+   "options": "Tour Booking Additional Guest"
+  },
+  {
+   "fieldname": "payment_tab",
+   "fieldtype": "Tab Break",
+   "label": "Payment"
+  },
+  {
+   "fieldname": "payments",
+   "fieldtype": "Table",
+   "label": "Payments",
+   "options": "Tour Booking Payments"
+  },
+  {
+   "fieldname": "section_break_36",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "total_payment",
+   "fieldtype": "Currency",
+   "label": "Total Payment",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Hotel Booking",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "discount_account",
+   "fieldtype": "Link",
+   "label": "Discount Account",
+   "options": "Account"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company"
+  },
+  {
+   "fieldname": "cost_center",
+   "fieldtype": "Link",
+   "label": "Cost Center",
+   "options": "Cost Center"
+  },
+  {
+   "fieldname": "section_break_48",
+   "fieldtype": "Section Break",
+   "label": "Accounting"
+  },
+  {
+   "fieldname": "column_break_56",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "income_account",
+   "fieldtype": "Link",
+   "label": "Income Account",
+   "options": "Account"
+  },
+  {
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "label": "Posting Date"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2023-07-31 10:23:09.858289",
+ "modified_by": "Administrator",
+ "module": "Tour Management",
+ "name": "Hotel Booking",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Tour Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

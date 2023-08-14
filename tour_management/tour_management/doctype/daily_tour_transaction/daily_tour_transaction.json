@@ -9,9 +9,7 @@
  "field_order": [
   "tour_information_tab",
   "naming_series",
-  "sale_invoice",
-  "posting_date",
-  "edit_posting_date",
+  "company",
   "agency",
   "agency_name",
   "arrival_date",
@@ -20,6 +18,9 @@
   "amended_from",
   "column_break_9",
   "price_list",
+  "time",
+  "posting_date",
+  "edit_posting_date",
   "tour_destination",
   "tour_destination_name",
   "voucher",
@@ -36,7 +37,12 @@
   "company_qty",
   "company_rate",
   "company_total_amount",
-  "column_break_26",
+  "column_break_33",
+  "company_paid_amount",
+  "income_account",
+  "paid_reference",
+  "column_break_35",
+  "company_income_status",
   "company_note",
   "sale_commission_to_be_paid_monthly_section",
   "sale_commission_qty",
@@ -51,22 +57,29 @@
   "column_break_59",
   "total_commission_note",
   "share_to_company_income_section",
-  "share_to_company_income_name",
+  "commission_income_account",
+  "share_to_company_expense_commission",
   "share_to_company_income_total_amount",
   "data_60",
   "share_to_company_income_share",
-  "expense",
-  "guide_expense_section",
-  "guide_expenses",
-  "driver_expense_section",
-  "driver_expense",
   "commissions_tab",
   "guide_commission_section",
   "guide_commissions",
   "driver_commission_section",
   "driver_commissions",
   "price_list_rate",
-  "base_price_list_rate"
+  "base_price_list_rate",
+  "total_expense",
+  "total_revenue",
+  "total_profit",
+  "cost_center",
+  "expense_tab",
+  "guide_expense_section",
+  "guide_expense_account",
+  "guide_expense",
+  "driver_expenses_section",
+  "driver_expense_account",
+  "driver_expense"
  ],
  "fields": [
   {
@@ -101,34 +114,6 @@
    "label": "Tour Information"
   },
   {
-   "fieldname": "expense",
-   "fieldtype": "Tab Break",
-   "label": "Expense"
-  },
-  {
-   "collapsible": 1,
-   "fieldname": "guide_expense_section",
-   "fieldtype": "Section Break",
-   "label": "Guide Expense"
-  },
-  {
-   "fieldname": "guide_expenses",
-   "fieldtype": "Table",
-   "label": "Guide Expenses",
-   "options": "Guide Expense"
-  },
-  {
-   "fieldname": "driver_expense_section",
-   "fieldtype": "Section Break",
-   "label": "Driver Expense"
-  },
-  {
-   "fieldname": "driver_expense",
-   "fieldtype": "Table",
-   "label": "Driver Expense",
-   "options": "Driver Expense"
-  },
-  {
    "fieldname": "commissions_tab",
    "fieldtype": "Tab Break",
    "label": "Commissions"
@@ -139,6 +124,7 @@
    "label": "Guide Commission"
   },
   {
+   "allow_on_submit": 1,
    "fieldname": "guide_commissions",
    "fieldtype": "Table",
    "label": "Guide Commissions",
@@ -159,7 +145,8 @@
    "fieldname": "agency",
    "fieldtype": "Link",
    "label": "Agency",
-   "options": "Customer"
+   "options": "Agency",
+   "reqd": 1
   },
   {
    "depends_on": "eval:doc.agency",
@@ -169,7 +156,7 @@
    "read_only": 1
   },
   {
-   "fetch_from": "agency.customer_name",
+   "fetch_from": "agency.agency_name",
    "fetch_if_empty": 1,
    "fieldname": "agency_name",
    "fieldtype": "Data",
@@ -193,19 +180,16 @@
    "label": "Original Full Price"
   },
   {
-   "fieldname": "column_break_26",
-   "fieldtype": "Column Break"
-  },
-  {
    "default": "0",
    "fieldname": "total_amount",
    "fieldtype": "Currency",
-   "label": "Total Amount"
+   "label": "Total Amount",
+   "read_only": 1
   },
   {
    "fieldname": "total_net_sale",
    "fieldtype": "Currency",
-   "hidden": 1,
+   "in_list_view": 1,
    "label": "Total Net Sale"
   },
   {
@@ -237,6 +221,7 @@
    "fetch_if_empty": 1,
    "fieldname": "tour_destination_name",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Tour Destination Name"
   },
   {
@@ -248,21 +233,13 @@
    "fetch_from": "tour_destination.net_sale_price",
    "fetch_if_empty": 1,
    "fieldname": "net_sale",
-   "fieldtype": "Data",
-   "hidden": 1,
+   "fieldtype": "Currency",
    "label": "Net Sale"
   },
   {
    "fieldname": "company_income_section",
    "fieldtype": "Section Break",
    "label": "Company Income "
-  },
-  {
-   "fieldname": "sale_invoice",
-   "fieldtype": "Link",
-   "label": "Sale Invoice",
-   "options": "Sales Invoice",
-   "read_only": 1
   },
   {
    "fieldname": "arrival_date",
@@ -322,7 +299,9 @@
   {
    "fieldname": "sale_commission_total_amount",
    "fieldtype": "Currency",
-   "label": "Total Amount"
+   "in_list_view": 1,
+   "label": "Total Amount",
+   "read_only": 1
   },
   {
    "fieldname": "total_commission_income_section",
@@ -342,7 +321,8 @@
   {
    "fieldname": "total_commission_total_amount",
    "fieldtype": "Currency",
-   "label": "Total Amount"
+   "label": "Total Amount",
+   "read_only": 1
   },
   {
    "fieldname": "share_to_company_income_section",
@@ -350,19 +330,16 @@
    "label": "Share To Company Income"
   },
   {
-   "fieldname": "share_to_company_income_name",
-   "fieldtype": "Data",
-   "label": "Name"
-  },
-  {
+   "default": "0",
    "fieldname": "share_to_company_income_share",
-   "fieldtype": "Data",
+   "fieldtype": "Percent",
    "label": "Share"
   },
   {
    "fieldname": "share_to_company_income_total_amount",
    "fieldtype": "Currency",
-   "label": "Total Amount"
+   "label": "Total Amount",
+   "read_only": 1
   },
   {
    "fieldname": "note",
@@ -401,13 +378,138 @@
   {
    "fieldname": "company_total_amount",
    "fieldtype": "Currency",
-   "label": "Total Amount"
+   "label": "Total Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company"
+  },
+  {
+   "fieldname": "income_account",
+   "fieldtype": "Link",
+   "label": "Account Receivable",
+   "options": "Account"
+  },
+  {
+   "fieldname": "total_expense",
+   "fieldtype": "Currency",
+   "hidden": 1,
+   "label": "Total Expense"
+  },
+  {
+   "fieldname": "total_revenue",
+   "fieldtype": "Currency",
+   "hidden": 1,
+   "label": "Total Revenue"
+  },
+  {
+   "fieldname": "total_profit",
+   "fieldtype": "Currency",
+   "hidden": 1,
+   "label": "Total Profit"
+  },
+  {
+   "fieldname": "time",
+   "fieldtype": "Select",
+   "label": "Time",
+   "options": "Morning\nAfternoon\nSunset\nSunrise"
+  },
+  {
+   "depends_on": "eval:doc.company_paid_amount > 0 ",
+   "fieldname": "company_income_status",
+   "fieldtype": "HTML",
+   "label": "Company Income Status",
+   "options": "<span class=\"indicator-pill whitespace-nowrap green\"><span>Paid</span></span>"
+  },
+  {
+   "fieldname": "column_break_33",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "company_paid_amount",
+   "fieldtype": "Currency",
+   "label": "Company Paid Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "paid_reference",
+   "fieldtype": "Data",
+   "label": "Paid Reference",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cost_center",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Cost Center",
+   "options": "Cost Center"
+  },
+  {
+   "fieldname": "commission_income_account",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Commission Income Account",
+   "options": "Account"
+  },
+  {
+   "default": "5202 - Commission on Sales - ESTC",
+   "fieldname": "share_to_company_expense_commission",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Share To Company Expense Commission",
+   "options": "Account"
+  },
+  {
+   "fieldname": "column_break_35",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "expense_tab",
+   "fieldtype": "Tab Break",
+   "label": "Expense"
+  },
+  {
+   "fieldname": "driver_expense",
+   "fieldtype": "Table",
+   "label": "Driver Expense",
+   "options": "Driver Expense"
+  },
+  {
+   "fieldname": "guide_expense_section",
+   "fieldtype": "Section Break",
+   "label": "Guide Expense"
+  },
+  {
+   "fieldname": "driver_expenses_section",
+   "fieldtype": "Section Break",
+   "label": "Driver Expenses"
+  },
+  {
+   "fieldname": "guide_expense",
+   "fieldtype": "Table",
+   "label": "Guide Expene",
+   "options": "Guide Expense"
+  },
+  {
+   "fieldname": "guide_expense_account",
+   "fieldtype": "Link",
+   "label": "Guide Expense Account",
+   "options": "Account"
+  },
+  {
+   "fieldname": "driver_expense_account",
+   "fieldtype": "Link",
+   "label": "Driver Expense Account",
+   "options": "Account"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-05-08 14:41:07.268353",
+ "modified": "2023-08-03 09:00:33.449923",
  "modified_by": "Administrator",
  "module": "Tour Management",
  "name": "Daily Tour Transaction",
@@ -429,5 +531,6 @@
  ],
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "track_changes": 1
 }
